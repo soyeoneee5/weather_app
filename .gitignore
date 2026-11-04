@@ -1,0 +1,6 @@
+# WeatherAPI 비밀 키
+*apikey.txt
+.env
+
+# 운영체제 파일
+.DS_Store
