@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="제주도의 현재 기온, 습도, 날씨와 업데이트 시각을 확인하는 간단한 날씨 앱"
+    />
+    <title>지금 제주 날씨는?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Montserrat:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="weather-shell">
+      <section class="weather-card" aria-labelledby="page-title">
+        <header class="card-header">
+          <div>
+            <p class="eyebrow">JEJU · KOREA</p>
+            <h1 id="page-title">지금 제주 날씨는?</h1>
+          </div>
+          <div class="location-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M12 21s7-5.6 7-12A7 7 0 1 0 5 9c0 6.4 7 12 7 12Z" />
+              <circle cx="12" cy="9" r="2.4" />
+            </svg>
+          </div>
+        </header>
+
+        <div id="loading" class="state-panel" role="status">
+          <span class="spinner" aria-hidden="true"></span>
+          <span>제주의 하늘을 확인하고 있어요…</span>
+        </div>
+
+        <div id="error" class="state-panel error-panel" role="alert" hidden>
+          <strong>날씨를 불러오지 못했어요.</strong>
+          <span id="error-message">잠시 후 다시 시도해 주세요.</span>
+        </div>
+
+        <div id="weather" class="weather-content" hidden>
+          <div class="hero-weather">
+            <div class="condition-icon-wrap">
+              <img id="condition-icon" class="condition-icon" alt="" />
+            </div>
+            <div>
+              <p id="condition-text" class="condition-text">-</p>
+              <p class="temperature"><span id="temperature">-</span><sup>°C</sup></p>
+            </div>
+          </div>
+
+          <div class="detail-grid">
+            <article class="detail-item">
+              <span class="detail-icon" aria-hidden="true">💧</span>
+              <div>
+                <p class="detail-label">습도</p>
+                <p class="detail-value"><span id="humidity">-</span>%</p>
+              </div>
+            </article>
+            <article class="detail-item">
+              <span class="detail-icon" aria-hidden="true">🕒</span>
+              <div>
+                <p class="detail-label">데이터 업데이트</p>
+                <time id="last-updated" class="detail-value" datetime="">-</time>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <footer class="card-footer">
+          <p>WeatherAPI.com 실시간 데이터</p>
+          <button id="refresh-button" class="refresh-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6v5h-5M4 18v-5h5" />
+              <path d="M18.3 9A7 7 0 0 0 6.4 6.4L4 9m16 6-2.4 2.6A7 7 0 0 1 5.7 15" />
+            </svg>
+            <span>새로고침</span>
+          </button>
+        </footer>
+      </section>
+      <p class="island-note">바람과 돌, 그리고 오늘의 제주</p>
+    </main>
+  </body>
+</html>
